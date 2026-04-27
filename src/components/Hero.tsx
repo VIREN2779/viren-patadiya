@@ -1,9 +1,10 @@
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, GitCompare, Link2, Mail } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from 'react';
 import { useTypingEffect } from '@/hooks/use-typing-effect';
+import { Button } from './ui/button';
 
-const Hero = () => {
+export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     const { text: typedText, isPaused } = useTypingEffect({
@@ -26,7 +27,11 @@ const Hero = () => {
         return () => clearTimeout(timer);
     }, []);
 
- 
+    const scrollToProjects = () => {
+        document.getElementById('projects')?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
 
     return (
         <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden py-8 lg:py-16 xl:py-20 2xl:py-24">
@@ -78,8 +83,39 @@ const Hero = () => {
                         <p className="text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-lg md:max-w-2xl mx-auto mb-4 sm:mb-6 animate-fade-in px-4 text-center leading-relaxed" style={{ animationDelay: '0.2s' }}>
                             Passionate about building modern, scalable web applications and delivering seamless user experiences.
                         </p>
+                        <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                            <a href="https://github.com/VIREN2779" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-primary/80 transition-all duration-300 shadow-lg text-white touch-manipulation">
+                                <GitCompare size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/viren-patadiya-5029561a0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-blue-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
+                                <Link2 size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
+                            </a>
+                            <a href="mailto:virenpatadiya2779@gmail.com" aria-label="Email" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-green-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
+                                <Mail size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
+                            </a>
+                        </div>
                     </div>
-                    
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
+                        <Button
+                            variant="default"
+                            size="lg"
+                            className="bg-gradient-to-r from-primary to-blue-500 hover:opacity-90 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/30 relative group overflow-hidden font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto touch-manipulation"
+                            onClick={scrollToProjects}
+                        >
+                            <span className="absolute inset-0 w-full h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-700"></span>
+                            <span className="relative z-10">View My Work</span>
+                        </Button>
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="border-white/30 text-slate-50 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg relative group overflow-hidden font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto touch-manipulation"
+                        >
+                            <span className="absolute inset-0 w-full h-full bg-white/5 transform -skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-700"></span>
+                            <span className="relative z-10">Contact Me</span>
+                        </Button>
+                    </div>
+
                     <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-0 right-0 mx-auto flex justify-center">
                         <button
                             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
@@ -95,5 +131,3 @@ const Hero = () => {
         </section>
     );
 };
-
-export default Hero;

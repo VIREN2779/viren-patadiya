@@ -1,6 +1,8 @@
 
 import { useEffect } from 'react';
 import Hero from '@/components/Hero';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   // Add smooth scroll behavior
@@ -14,7 +16,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Navbar />
+      <main>
         <Hero />
+      </main>
+      <Footer />
     </div>
   );
 };

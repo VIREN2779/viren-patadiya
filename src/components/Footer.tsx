@@ -1,3 +1,5 @@
+import { Mail, Phone } from 'lucide-react';
+
 export default function Footer() {
     return (
         <footer className="bg-gradient-to-b from-gray-900 to-navy-dark text-white pt-16 pb-8 relative overflow-hidden animate-fadeIn">
@@ -66,6 +68,28 @@ export default function Footer() {
                                     </a>
                                 </li>
                             </ul>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <h3 className="text-xl font-semibold mb-5 text-white">Contact</h3>
+                            <div className="space-y-5">
+                                <div className="flex items-center group">
+                                    <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center mr-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 shadow-md">
+                                        <Mail className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <a href="mailto:virenpatadiya2779@gmail.com" className="text-gray-400 group-hover:text-primary transition-colors duration-300 break-all">
+                                        virenpatadiya2779@gmail.com
+                                    </a>
+                                </div>
+                                <div className="flex items-center group">
+                                    <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center mr-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 shadow-md">
+                                        <Phone className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <a href="tel:+911234567890" className="text-gray-400 group-hover:text-primary transition-colors duration-300">
+                                        +91 1234567890
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

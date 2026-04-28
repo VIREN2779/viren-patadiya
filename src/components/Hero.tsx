@@ -3,16 +3,15 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 
+const words = [
+    "React.js Developer",
+    "Node.js Developer",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+];
+
 export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
-
-    // Typing Effect
-    const words = [
-        "React.js Developer",
-        "Node.js Developer",
-        "Full Stack Developer",
-        "MERN Stack Developer",
-    ];
 
     const [wordIndex, setWordIndex] = useState(0);
     const [typedText, setTypedText] = useState("");
@@ -42,7 +41,9 @@ export default function Hero() {
                     setTypedText(currentWord.slice(0, typedText.length + 1));
                 }, 100);
             } else {
-                setIsPaused(true);
+                timeout = setTimeout(() => {
+                    setIsPaused(true);
+                }, 0);
             }
         } else {
             if (typedText.length > 0) {
@@ -50,8 +51,10 @@ export default function Hero() {
                     setTypedText(currentWord.slice(0, typedText.length - 1));
                 }, 50);
             } else {
-                setIsDeleting(false);
-                setWordIndex((prev) => (prev + 1) % words.length);
+                timeout = setTimeout(() => {
+                    setIsDeleting(false);
+                    setWordIndex((prev) => (prev + 1) % words.length);
+                }, 0);
             }
         }
 

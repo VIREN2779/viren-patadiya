@@ -1,6 +1,17 @@
-import { Mail, Phone } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <footer className="bg-gradient-to-b from-gray-900 to-navy-dark text-white pt-16 pb-8 relative overflow-hidden animate-fadeIn">
             <div className="absolute top-0 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-30"></div>
@@ -91,6 +102,24 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <Separator className="bg-gray-800/80 my-10" />
+
+                    <div className="flex flex-col md:flex-row justify-between items-center">
+                        <p className="text-gray-400 text-sm mb-6 md:mb-0">
+                            &copy; {currentYear} VIREN PATADIYA. All rights reserved.
+                        </p>
+
+                        <Button
+                            onClick={scrollToTop}
+                            variant="outline"
+                            size="icon"
+                            className="bg-gray-800 border-gray-700 hover:bg-primary hover:border-primary hover:scale-110 rounded-full transition-all duration-300 shadow-lg"
+                            aria-label="Scroll to top"
+                        >
+                            <ArrowUp className="h-5 w-5 text-white" />
+                        </Button>
                     </div>
                 </div>
             </div>

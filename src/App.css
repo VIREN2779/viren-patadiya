@@ -1,16 +1,7 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-}
-
-/* Profile image glow effect */
 .profile-glow {
     position: relative;
     z-index: 1;
 }
-
 .profile-glow::before {
     content: '';
     position: absolute;
@@ -33,17 +24,6 @@
         opacity: 0.9;
         transform: scale(1.05);
     }
-}
-
-/* Animated typing cursor */
-.typing-cursor {
-    display: inline-block;
-    width: 3px;
-    height: 0.9em;
-    background-color: currentColor;
-    margin-left: 4px;
-    animation: blink 1s step-end infinite;
-    vertical-align: text-bottom;
 }
 
 @keyframes blink {

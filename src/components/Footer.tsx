@@ -31,6 +31,42 @@ export default function Footer() {
                                 Linkedin
                             </a>
                         </div>
+
+                        <div className="flex flex-col max-w-fit">
+                            <h3 className="text-xl font-semibold mb-5 text-white">Quick Links</h3>
+                            <ul className="space-y-3">
+                                <li>
+                                    <a href="#hero" className="text-gray-400 hover:text-primary transition-all duration-300 flex items-center group">
+                                        <span className="h-1.5 w-3 bg-primary/60 rounded mr-2.5 group-hover:w-4 transition-all"></span>
+                                        <span className="group-hover:translate-x-1 transition-transform">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" className="text-gray-400 hover:text-primary transition-all duration-300 flex items-center group">
+                                        <span className="h-1.5 w-3 bg-primary/60 rounded mr-2.5 group-hover:w-4 transition-all"></span>
+                                        <span className="group-hover:translate-x-1 transition-transform">About</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#skills" className="text-gray-400 hover:text-primary transition-all duration-300 flex items-center group">
+                                        <span className="h-1.5 w-3 bg-primary/60 rounded mr-2.5 group-hover:w-4 transition-all"></span>
+                                        <span className="group-hover:translate-x-1 transition-transform">Skills</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#projects" className="text-gray-400 hover:text-primary transition-all duration-300 flex items-center group">
+                                        <span className="h-1.5 w-3 bg-primary/60 rounded mr-2.5 group-hover:w-4 transition-all"></span>
+                                        <span className="group-hover:translate-x-1 transition-transform">Projects</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact" className="text-gray-400 hover:text-primary transition-all duration-300 flex items-center group">
+                                        <span className="h-1.5 w-3 bg-primary/60 rounded mr-2.5 group-hover:w-4 transition-all"></span>
+                                        <span className="group-hover:translate-x-1 transition-transform">Contact</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

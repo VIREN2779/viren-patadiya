@@ -55,8 +55,8 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 w-full z-40 transition-all duration-300 animate-fadeIn ${isScrolled
-                    ? 'bg-white/95 backdrop-blur-md shadow-md py-4'
-                    : 'bg-transparent py-5'
+                ? 'bg-white/95 backdrop-blur-md shadow-md py-4'
+                : 'bg-transparent py-5'
                 }`}
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
@@ -111,6 +111,55 @@ const Navbar = () => {
                 >
                     {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
+
+                {/* Mobile Navigation */}
+                <div
+                    className={`md:hidden ${isScrolled ? 'bg-white' : 'bg-white/80 backdrop-blur-md'} shadow-lg absolute w-full overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                >
+                    <div className="py-4">
+                        <div className="flex items-center gap-3 px-6 mb-6 border-b border-gray-100 pb-3">
+                            <div className="relative">
+                                <Avatar className="h-9 w-9 border-2 border-primary shadow-sm profile-glow">
+                                    <AvatarImage src="/profile-pic.jpg" alt="VIREN PATADIYA" className="object-cover" />
+                                    <AvatarFallback className="bg-primary text-white font-bold">PP</AvatarFallback>
+                                </Avatar>
+                            </div>
+                            <span className="font-semibold text-navy-dark">VIREN <span className="text-primary">PATADIYA</span></span>
+                        </div>
+                        <nav className="flex flex-col px-4">
+                            {navItems.map((item) => {
+                                const Icon = item.icon;
+                                const isActive = activeSection === item.id;
+                                return (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => scrollToSection(item.id)}
+                                        className={`flex items-center gap-3 px-4 py-3 rounded-md transition-all ${isActive
+                                            ? 'text-primary font-medium bg-primary/10 border-l-2 border-primary'
+                                            : 'text-navy-dark hover:bg-muted border-l-2 border-transparent'
+                                            }`}
+                                    >
+                                        <Icon size={18} className={isActive ? 'text-primary' : 'opacity-80'} />
+                                        <span>{item.name}</span>
+                                    </button>
+                                );
+                            })}
+                            <div className="mt-4 px-2">
+                                <Button
+                                    variant={isScrolled ? "outline" : "default"}
+                                    className={isScrolled
+                                        ? "border-primary text-primary hover:bg-primary hover:text-white w-full font-medium shadow-sm"
+                                        : "bg-primary text-white hover:bg-primary/90 w-full font-medium shadow-sm"
+                                    }
+                                    onClick={() => scrollToSection('contact')}
+                                >
+                                    Let's Connect
+                                </Button>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </header>
     );

@@ -1,4 +1,5 @@
-import { ArrowUp, Mail, Phone } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -12,8 +13,16 @@ export default function Footer() {
     const quickLinks = ['hero', 'about', 'skills', 'projects', 'contact'];
 
     const socialLinks = [
-        { label: 'GitHub', url: 'https://github.com/VIREN2779/' },
-        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/viren-patadiya-5029561a0/' },
+        {
+            label: "GitHub",
+            url: "https://github.com/VIREN2779/",
+            icon: FaGithub,
+        },
+        {
+            label: "LinkedIn",
+            url: "https://www.linkedin.com/in/viren-patadiya-5029561a0/",
+            icon: FaLinkedinIn,
+        },
     ];
 
     const contactItems = [
@@ -34,7 +43,7 @@ export default function Footer() {
                             Full Stack Developer specializing in modern web technologies and responsive design solutions.
                         </p>
                         <div className="flex space-x-4">
-                            {socialLinks.map(({ label, url }) => (
+                            {socialLinks.map(({ label, url, icon: Icon }) => (
                                 <a
                                     key={label}
                                     href={url}
@@ -43,7 +52,7 @@ export default function Footer() {
                                     aria-label={label}
                                     className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300"
                                 >
-                                    {label}
+                                    <Icon className="w-5 h-5 text-white" />
                                 </a>
                             ))}
                         </div>

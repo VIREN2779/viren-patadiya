@@ -94,7 +94,7 @@ export default function Hero() {
 
                         <h1 className="text-white text-4xl md:text-6xl font-bold mb-3">
                             Hi, I'm{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">
                                 VIREN PATADIYA
                             </span>
                         </h1>

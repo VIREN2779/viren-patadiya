@@ -3,16 +3,15 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 
+const words = [
+    "React.js Developer",
+    "Node.js Developer",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+];
+
 export default function Hero() {
     const [isLoaded, setIsLoaded] = useState(false);
-
-    // Typing Effect
-    const words = [
-        "React.js Developer",
-        "Node.js Developer",
-        "Full Stack Developer",
-        "MERN Stack Developer",
-    ];
 
     const [wordIndex, setWordIndex] = useState(0);
     const [typedText, setTypedText] = useState("");
@@ -42,7 +41,9 @@ export default function Hero() {
                     setTypedText(currentWord.slice(0, typedText.length + 1));
                 }, 100);
             } else {
-                setIsPaused(true);
+                timeout = setTimeout(() => {
+                    setIsPaused(true);
+                }, 0);
             }
         } else {
             if (typedText.length > 0) {
@@ -50,8 +51,10 @@ export default function Hero() {
                     setTypedText(currentWord.slice(0, typedText.length - 1));
                 }, 50);
             } else {
-                setIsDeleting(false);
-                setWordIndex((prev) => (prev + 1) % words.length);
+                timeout = setTimeout(() => {
+                    setIsDeleting(false);
+                    setWordIndex((prev) => (prev + 1) % words.length);
+                }, 0);
             }
         }
 
@@ -65,9 +68,9 @@ export default function Hero() {
     };
 
     return (
-        <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden py-8 lg:py-16 xl:py-20 2xl:py-24">
+        <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden py-8 lg:py-16 xl:py-20 2xl:py-24 bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-fixed">
 
-            <div className="absolute inset-0 bg-gradient-to-br from-navy-light via-navy to-navy-dark opacity-95 z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent z-0"></div>
 
             <div className="container mx-auto px-4 z-10 text-center">
                 <div className="max-w-5xl mx-auto">
@@ -97,7 +100,7 @@ export default function Hero() {
                         </h1>
 
                         <div className="flex justify-center items-center gap-2 min-h-[40px]">
-                            <span className="text-primary font-semibold text-xl md:text-2xl">
+                            <span className="text-white font-semibold text-xl md:text-2xl">
                                 {typedText}
                                 <span className={`ml-1 inline-block w-1.5 h-6 bg-primary rounded-sm ${isPaused ? "opacity-0" : "opacity-100"} transition-opacity duration-200`}
                                 ></span>

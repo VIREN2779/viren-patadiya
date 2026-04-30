@@ -70,7 +70,7 @@ export default function Hero() {
     return (
         <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden py-8 lg:py-16 xl:py-20 2xl:py-24 bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-fixed">
 
-            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent z-0"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-950/60 to-transparent z-0"></div>
 
             <div className="container mx-auto px-4 z-10 text-center">
                 <div className="max-w-5xl mx-auto">

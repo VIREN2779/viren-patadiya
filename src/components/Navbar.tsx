@@ -49,7 +49,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur-xl border-b border-white/10 shadow-lg">
+        <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-blue-500/20 shadow-2xl">
             <div className="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-3">

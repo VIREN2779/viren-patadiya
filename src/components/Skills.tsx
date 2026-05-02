@@ -1,9 +1,34 @@
 import { Shield, Code, Database, Server, Globe, Terminal } from 'lucide-react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export default function Skills() {
-    const [isVisible] = useState(true);
+
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        const el = sectionRef.current; // capture ref value
+        if (el) {
+            observer.observe(el);
+        }
+
+        return () => {
+            if (el) {
+                observer.unobserve(el);
+            }
+        };
+    }, []);
 
     const skillCategories = [
         {
@@ -86,7 +111,7 @@ export default function Skills() {
     ];
 
     return (
-        <section id="skills" className="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <section id="skills" ref={sectionRef} className="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
             <div className="absolute top-40 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
 

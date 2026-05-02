@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import About from '@/components/About';
+import SKills from '@/components/Skills';
 
 const Index = () => {
   // Add smooth scroll behavior
@@ -21,6 +22,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <SKills />
       </main>
       <Footer />
     </div>

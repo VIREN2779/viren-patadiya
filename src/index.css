@@ -128,3 +128,30 @@
     @apply font-sans;
     }
 }
+
+/* Tech logo horizontal scrolling animation */
+@keyframes tech-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tech-scroll-mobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-tech-scroll {
+  animation: tech-scroll 30s linear infinite;
+}
+
+.animate-tech-scroll-mobile {
+  animation: tech-scroll-mobile 15s linear infinite;
+}

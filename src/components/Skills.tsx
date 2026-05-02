@@ -11,42 +11,77 @@ export default function Skills() {
             icon: <Code className="text-tech-react h-8 w-8" />,
             color: "from-blue-500/20 to-blue-400/5",
             iconBg: "bg-blue-500/10",
-            skills: ["React", "JavaScript/TypeScript", "HTML5/CSS3", "Tailwind CSS", "Responsive Design"]
+            skills: [
+                "HTML5", "CSS3", "Bootstrap", "Tailwind CSS",
+                "Material UI", "Ant Design",
+                "JavaScript (ES6+)", "TypeScript",
+                "React.js", "Next.js", "Vite.js",
+                "Redux", "Context API",
+                "Responsive Design", "Cross-Browser Compatibility"
+            ]
         },
         {
             title: "Backend Development",
             icon: <Server className="text-primary h-8 w-8" />,
             color: "from-indigo-500/20 to-indigo-400/5",
             iconBg: "bg-indigo-500/10",
-            skills: ["Node.js", "Express.js", "RESTful APIs", "Authentication", "Server Management"]
+            skills: [
+                "Node.js", "Express.js",
+                "RESTful APIs", "API Integration",
+                "Authentication", "Authorization",
+                "JWT", "OAuth",
+                "Server-Side Development"
+            ]
         },
         {
             title: "Database Management",
             icon: <Database className="text-tech-node h-8 w-8" />,
             color: "from-green-500/20 to-green-400/5",
             iconBg: "bg-green-500/10",
-            skills: ["MongoDB", "mySQL", "SQLite", "Database Design", "Data Modeling"]
+            skills: [
+                "MongoDB", "MySQL", "SQLite",
+                "Database Design",
+                "Data Modeling"
+            ]
         },
         {
             title: "Development Tools",
             icon: <Terminal className="text-tech-js h-8 w-8" />,
             color: "from-yellow-500/20 to-yellow-400/5",
             iconBg: "bg-yellow-500/10",
-            skills: ["Git/GitHub", "VS Code", "Vite", "npm/yarn"]
+            skills: [
+                "Git", "GitHub",
+                "VS Code",
+                "Jira", "Slack", "Microsoft Teams",
+                "Postman",
+                "Chrome DevTools",
+                "Debugging"
+            ]
         },
         {
-            title: "Cloud & Deployment",
+            title: "Deployment & Cloud",
             icon: <Globe className="text-navy h-8 w-8" />,
             color: "from-sky-500/20 to-sky-400/5",
             iconBg: "bg-sky-500/10",
-            skills: ["Vercel", "Netlify", "Cloud Services", "Domain Management", "Testing & Debugging"]
+            skills: [
+                "Cloudflare",
+                "Vercel", "Netlify", "Render",
+                "CI/CD Basics",
+                "Domain & Hosting Management"
+            ]
         },
         {
-            title: "Soft Skills",
+            title: "Professional Skills",
             icon: <Shield className="text-tech-cyber h-8 w-8" />,
             color: "from-purple-500/20 to-purple-400/5",
             iconBg: "bg-purple-500/10",
-            skills: ["Problem Solving", "Project Management", "Team Collaboration", "Communication", "Quick Learning"]
+            skills: [
+                "Problem Solving",
+                "Team Collaboration",
+                "Communication",
+                "Project Management",
+                "Time Management"
+            ]
         }
     ];
 
@@ -83,11 +118,10 @@ export default function Skills() {
                                         </div>
                                     </CardHeader>
                                     <CardContent className="pt-2">
-                                        <ul className="space-y-2.5">
+                                        <ul className="space-y-2.5 flex flex-wrap gap-2">
                                             {category.skills.map((skill, skillIndex) => (
                                                 <li key={skillIndex} className="flex items-center">
-                                                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-2.5"></div>
-                                                    <span className="text-gray-700">{skill}</span>
+                                                    <span className="text-gray-700 text-md font-medium px-3 py-1 rounded-full border transition-transform hover:bg-black hover:text-white hover:scale-105">{skill}</span>
                                                 </li>
                                             ))}
                                         </ul>

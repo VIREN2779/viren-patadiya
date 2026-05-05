@@ -1,5 +1,17 @@
+import { useState } from "react";
 
 export default function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
     return (
         <section id="contact" className="relative py-10 bg-linear-to-b from-gray-50 to-white overflow-hidden">
             <div className="container mx-auto px-4">
@@ -16,23 +28,31 @@ export default function Contact() {
                         <input
                             name="name"
                             placeholder="Your Name"
+                            value={formData.name}
+                            onChange={handleChange}
                             className="border border-gray-300 rounded-md px-3 py-2"
                         />
                         <input
                             name="email"
                             type="email"
                             placeholder="Email Address"
+                            value={formData.email}
+                            onChange={handleChange}
                             className="border border-gray-300 rounded-md px-3 py-2"
                         />
                         <input
                             name="subject"
                             placeholder="Subject"
+                            value={formData.subject}
+                            onChange={handleChange}
                             className="border border-gray-300 rounded-md px-3 py-2"
                         />
                         <textarea
                             name="message"
-                            placeholder="Your message..." 
+                            placeholder="Your message..."
                             rows={5}
+                            value={formData.message}
+                            onChange={handleChange}
                             className="border border-gray-300 rounded-md px-3 py-2"
                         />
                         <button

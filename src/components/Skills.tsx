@@ -171,7 +171,7 @@ export default function Skills() {
                                         </div>
                                     </CardHeader>
                                     <CardContent className="pt-2">
-                                        <ul className="space-y-2.5 flex flex-wrap gap-2">
+                                        <ul className="flex flex-wrap gap-2">
                                             {category.skills.map((skill, skillIndex) => (
                                                 <li key={skillIndex} className="flex items-center">
                                                     <span className="text-gray-700 text-md font-medium px-3 py-1 rounded-full border transition-transform hover:bg-black hover:text-white hover:scale-105">{skill}</span>

@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "./ui/button";
+import { LoaderCircle, Send } from "lucide-react";
+import { toast } from "sonner";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -10,6 +13,7 @@ export default function Contact() {
         subject: '',
         message: ''
     });
+    const [submit, setSubmit] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -17,6 +21,72 @@ export default function Contact() {
             ...prev,
             [name]: value
         }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined;
+        if (!accessKey) {
+            toast.error('Configuration error', {
+                description: 'Email service is not configured.'
+            });
+            return;
+        }
+
+        setSubmit(true);
+
+        try {
+            const payload = {
+                access_key: accessKey,
+                subject: `Portfolio Contact: ${formData.subject}`,
+                from_name: formData.name,
+                name: formData.name,
+                email: formData.email,
+                message: formData.message,
+            };
+
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const raw = await res.text();
+            let data;
+            try {
+                data = JSON.parse(raw);
+            } catch {
+                console.error('Web3Forms response (not JSON):', raw.substring(0, 500));
+                throw new Error('Invalid response from email service');
+            }
+
+            if (!res.ok || !data?.success) {
+                const msg = data?.message || data?.error || 'Failed to send message';
+                throw new Error(msg);
+            }
+
+            toast.success("Message sent!", {
+                description: "Thanks for reaching out. I'll get back to you soon."
+            });
+
+            setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+        } catch (error) {
+            console.error("Error sending message:", error);
+            toast.error("Something went wrong", {
+                description: error instanceof Error ? error.message : "Your message could not be sent. Please try again later.",
+            });
+        } finally {
+            setSubmit(false);
+        }
     };
 
     return (
@@ -30,7 +100,7 @@ export default function Contact() {
                     </p>
                 </div>
 
-                <div className="grid max-w-3xl mt-5">
+                <div className="grid max-w-4xl mt-5">
                     <Card className="border-0 shadow-lg">
                         <CardContent className="py-4 px-5 pt-0">
                             <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
@@ -40,10 +110,10 @@ export default function Contact() {
                                     </label>
                                     <Input
                                         id="name"
-                            name="name"
+                                        name="name"
                                         placeholder="John Doe"
-                            value={formData.name}
-                            onChange={handleChange}
+                                        value={formData.name}
+                                        onChange={handleChange}
                                         className="border-gray-300 focus:border-primary focus:ring focus:ring-primary/20"
                                         required
                                     />
@@ -55,11 +125,11 @@ export default function Contact() {
                                     </label>
                                     <Input
                                         id="email"
-                            name="email"
-                            type="email"
+                                        name="email"
+                                        type="email"
                                         placeholder="john@example.com"
-                            value={formData.email}
-                            onChange={handleChange}
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         className="border-gray-300 focus:border-primary focus:ring focus:ring-primary/20"
                                         required
                                     />
@@ -71,13 +141,13 @@ export default function Contact() {
                                     </label>
                                     <Input
                                         id="subject"
-                            name="subject"
+                                        name="subject"
                                         placeholder="How can I help you?"
-                            value={formData.subject}
-                            onChange={handleChange}
+                                        value={formData.subject}
+                                        onChange={handleChange}
                                         className="border-gray-300 focus:border-primary focus:ring focus:ring-primary/20"
                                         required
-                        />
+                                    />
                                 </div>
 
                                 <div>
@@ -86,23 +156,34 @@ export default function Contact() {
                                     </label>
                                     <Textarea
                                         id="message"
-                            name="message"
-                            placeholder="Your message..."
-                            rows={5}
-                            value={formData.message}
-                            onChange={handleChange}
+                                        name="message"
+                                        placeholder="Your message..."
+                                        rows={5}
+                                        value={formData.message}
+                                        onChange={handleChange}
                                         className="border-gray-300 focus:border-primary focus:ring focus:ring-primary/20"
                                         required
-                        />
+                                    />
                                 </div>
 
-                        <button
-                            type="submit"
-                            className="h-10 w-full bg-blue-600 text-white font-semibold rounded-md"
-                        >
-                            Send Message
-                        </button>
-                    </form>
+                                <Button
+                                    type="submit"
+                                    className="h-10 w-full bg-blue-600 text-white font-semibold shadow-md cursor-pointer"
+                                    disabled={submit}
+                                >
+                                    {submit ? (
+                                        <span className="flex items-center justify-center">
+                                            <LoaderCircle className="h-4 w-4 animate-spin mr-2" />
+                                            Sending...
+                                        </span>
+                                    ) : (
+                                        <span className="flex items-center justify-center">
+                                            <Send className="mr-2 h-4 w-4" />
+                                            Send Message
+                                        </span>
+                                    )}
+                                </Button>
+                            </form>
                         </CardContent>
                     </Card>
                 </div>

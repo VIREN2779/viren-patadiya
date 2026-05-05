@@ -6,7 +6,7 @@ A modern, responsive portfolio built to showcase projects, skills, and professio
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | Next.js / React.js |
+| Frontend | React.js |
 | Styling | Tailwind CSS, shadcn/ui |
 | Backend | Node.js APIs |
 

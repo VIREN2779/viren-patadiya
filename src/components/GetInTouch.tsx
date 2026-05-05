@@ -91,16 +91,16 @@ export default function Contact() {
 
     return (
         <section id="contact" className="relative py-10 bg-linear-to-b from-gray-50 to-white overflow-hidden">
-            <div className="grid justify-center container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col items-center justify-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-3">Get In Touch</h2>
                     <div className="w-24 h-1.5 bg-blue-600 rounded-full"></div>
-                    <p className="text-gray-600 mt-4 text-center max-w-2xl">
-                        Let's build something great together
+                    <p className="text-gray-600 mt-1 text-center max-w-2xl">
+                        Let's build something great together!
                     </p>
                 </div>
 
-                <div className="grid max-w-4xl mt-5">
+                <div className="max-w-4xl mx-auto mt-5">
                     <Card className="border-0 shadow-lg">
                         <CardContent className="py-4 px-5 pt-0">
                             <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">

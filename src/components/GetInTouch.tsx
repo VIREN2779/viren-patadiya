@@ -90,12 +90,12 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="relative py-10 bg-linear-to-b from-gray-50 to-white overflow-hidden">
+        <section id="contact" className="relative py-24 bg-linear-to-b from-gray-50 to-white overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-3">Get In Touch</h2>
                     <div className="w-24 h-1.5 bg-blue-600 rounded-full"></div>
-                    <p className="text-gray-600 mt-1 text-center max-w-2xl">
+                    <p className="text-gray-600 mt-4 text-center max-w-2xl">
                         Let's build something great together!
                     </p>
                 </div>

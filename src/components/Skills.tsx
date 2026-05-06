@@ -147,7 +147,7 @@ export default function Skills() {
                 <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="flex flex-col items-center justify-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-3">Skills & Expertise</h2>
-                        <div className="w-24 h-1.5 bg-primary rounded-full"></div>
+                        <div className="w-24 h-1.5 bg-blue-600 rounded-full"></div>
                         <p className="text-gray-600 mt-4 text-center max-w-2xl">
                             My technical proficiency and professional capabilities that I bring to every project
                         </p>
@@ -171,7 +171,7 @@ export default function Skills() {
                                         </div>
                                     </CardHeader>
                                     <CardContent className="pt-2">
-                                        <ul className="space-y-2.5 flex flex-wrap gap-2">
+                                        <ul className="flex flex-wrap gap-2">
                                             {category.skills.map((skill, skillIndex) => (
                                                 <li key={skillIndex} className="flex items-center">
                                                     <span className="text-gray-700 text-md font-medium px-3 py-1 rounded-full border transition-transform hover:bg-black hover:text-white hover:scale-105">{skill}</span>

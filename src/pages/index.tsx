@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import About from '@/components/About';
 import SKills from '@/components/Skills';
 import GetInTouch from '@/components/GetInTouch';
+import Projects from '@/components/Projects';
 
 const Index = () => {
   // Add smooth scroll behavior
@@ -25,6 +26,7 @@ const Index = () => {
         <About />
         <SKills />
         <GetInTouch />
+        <Projects />
       </main>
       <Footer />
     </div>

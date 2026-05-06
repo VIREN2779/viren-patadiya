@@ -18,13 +18,14 @@ export default function About() {
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const el = sectionRef.current; // capture ref value
+        if (el) {
+            observer.observe(el);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (el) {
+                observer.unobserve(el);
             }
         };
     }, []);

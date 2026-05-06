@@ -22,6 +22,7 @@ A modern, responsive portfolio built to showcase projects, skills, and professio
 
 - Contact form API
 - Additional Node.js APIs as needed
+- web3forms :- for send email of contact form - 250/Month mail limit
 
 ## Deployment
 

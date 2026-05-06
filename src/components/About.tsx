@@ -70,7 +70,7 @@ export default function About() {
                                     <p className="text-gray-700 leading-relaxed mt-4">
                                         On the frontend, I build responsive interfaces with{" "}
                                         <mark className="bg-purple-100 text-purple-800 rounded px-1.5 py-0.5 font-medium not-italic">React.js & Next.js</mark>,{" "}
-                                        <mark className="bg-purple-100 text-purple-800 rounded px-1.5 py-0.5 font-medium not-italic">TypeScript</mark>, and{" "}
+                                        <mark className="bg-purple-100 text-purple-800 rounded px-1.5 py-0.5 font-medium not-italic">JavaScript</mark>, and{" "}
                                         <mark className="bg-purple-100 text-purple-800 rounded px-1.5 py-0.5 font-medium not-italic">Tailwind CSS</mark> —
                                         on the backend, I design scalable{" "}
                                         <mark className="bg-teal-100 text-teal-800 rounded px-1.5 py-0.5 font-medium not-italic">RESTful APIs</mark> with{" "}

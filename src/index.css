@@ -155,3 +155,22 @@
 .animate-tech-scroll-mobile {
   animation: tech-scroll-mobile 15s linear infinite;
 }
+
+/* loader */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+  background: #0f172a; /* slate-900 fallback */
+  animation: fadeOut 1s ease-in-out 2s forwards;
+}
+

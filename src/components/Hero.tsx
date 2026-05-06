@@ -1,7 +1,8 @@
-import { ArrowDown, GitCompare, Link2, Mail } from 'lucide-react';
+import { ArrowDown, Mail } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const words = [
     "React.js Developer",
@@ -81,7 +82,7 @@ export default function Hero() {
                             }`}
                     >
                         <div className="relative mb-6">
-                            <Avatar className="h-32 w-32 border-4 border-primary/80 shadow-2xl">
+                            <Avatar className="h-37 w-37 border-4 border-primary/80 shadow-2xl">
                                 <AvatarImage
                                     src="/profile-pic.jpg"
                                     alt="Viren Patadiya"
@@ -114,21 +115,21 @@ export default function Hero() {
                         </p>
                         <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                             <a href="https://github.com/VIREN2779" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-primary/80 transition-all duration-300 shadow-lg text-white touch-manipulation">
-                                <GitCompare size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
+                                <FaGithub size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
                             </a>
                             <a href="https://www.linkedin.com/in/viren-patadiya-5029561a0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-blue-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
-                                <Link2 size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
+                                <FaLinkedinIn size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
                             </a>
                             <a href="mailto:virenpatadiya2779@gmail.com" aria-label="Email" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-green-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
                                 <Mail size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
+                    <div className="flex flex-col sm:flex-row justify-center mt-2 gap-4 animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
                         <Button
                             variant="default"
                             size="lg"
-                            className="bg-gradient-to-r from-primary to-blue-500 hover:opacity-90 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/30 relative group overflow-hidden font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto touch-manipulation"
+                            className="bg-gradient-to-r from-primary to-blue-500 hover:opacity-90 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/30 relative group overflow-hidden font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto touch-manipulation cursor-pointer"
                             onClick={scrollToProjects}
                         >
                             <span className="absolute inset-0 w-full h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-700"></span>
@@ -138,7 +139,7 @@ export default function Hero() {
                             variant="outline"
                             size="lg"
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="border-white/30 text-slate-50 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg relative group overflow-hidden font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto touch-manipulation"
+                            className="border-white/30 text-slate-50 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg relative group overflow-hidden font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto touch-manipulation cursor-pointer"
                         >
                             <span className="absolute inset-0 w-full h-full bg-white/5 transform -skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-700"></span>
                             <span className="relative z-10">Contact Me</span>

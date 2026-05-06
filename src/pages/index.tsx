@@ -7,6 +7,7 @@ import About from '@/components/About';
 import SKills from '@/components/Skills';
 import GetInTouch from '@/components/GetInTouch';
 import Projects from '@/components/Projects';
+import Loader from '@/components/Loader';
 
 const Index = () => {
   // Add smooth scroll behavior
@@ -20,13 +21,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Loader />
       <Navbar />
       <main>
         <Hero />
         <About />
         <SKills />
-        <GetInTouch />
         <Projects />
+        <GetInTouch />
       </main>
       <Footer />
     </div>

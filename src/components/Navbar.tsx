@@ -72,7 +72,7 @@ export default function Navbar() {
                         <button
                             key={id}
                             onClick={() => scrollToSection(id)}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${activeSection === id
+                            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${activeSection === id
                                     ? "bg-blue-600 text-white shadow-md"
                                     : "text-white/90 hover:bg-white/10 hover:text-white"
                                 }`}
@@ -83,7 +83,7 @@ export default function Navbar() {
                     ))}
 
                     <Button
-                        className="ml-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-5 h-11"
+                        className="ml-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-5 h-11 cursor-pointer"
                         onClick={() => scrollToSection("contact")}
                     >
                         Let's Connect

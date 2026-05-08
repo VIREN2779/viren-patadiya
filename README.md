@@ -8,7 +8,6 @@ A modern, responsive portfolio built to showcase projects, skills, and professio
 |-------|------------|
 | Frontend | React.js |
 | Styling | Tailwind CSS, shadcn/ui |
-| Backend | Node.js APIs |
 
 ## Sections
 
@@ -21,12 +20,7 @@ A modern, responsive portfolio built to showcase projects, skills, and professio
 ## Backend & APIs
 
 - Contact form API
-- Additional Node.js APIs as needed
 - web3forms :- for send email of contact form - 250/Month mail limit
-
-## Deployment
-
-- **Platform:**: 
 
 ## Getting Started
 
@@ -35,4 +29,3 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-

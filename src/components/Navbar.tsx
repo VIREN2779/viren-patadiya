@@ -77,7 +77,7 @@ export default function Navbar() {
                                     : "text-white/90 hover:bg-white/10 hover:text-white"
                                 }`}
                         >
-                            <Icon size={16} className="text-white" />
+                            <Icon size={18} className="text-white" />
                             <span>{name}</span>
                         </button>
                     ))}

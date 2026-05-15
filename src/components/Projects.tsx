@@ -1,4 +1,4 @@
-import { ExternalLink, Briefcase, Layout, Laptop } from 'lucide-react';
+import { ExternalLink, Layout, ShoppingCart, UtensilsCrossed } from 'lucide-react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
@@ -12,7 +12,7 @@ export default function Projects() {
             tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
             image: "https://placehold.co/600x400/1a365d/FFFFFF/webp?text=E+Commerce",
             demo: "https://viren-ecom.netlify.app/",
-            icon: <Briefcase className="h-5 w-5 text-blue-500" />
+            icon: <ShoppingCart className="h-5 w-5 text-blue-500" />
         },
         {
             title: "Personal Portfolio Website",
@@ -24,13 +24,13 @@ export default function Projects() {
             icon: <Layout className="h-5 w-5 text-indigo-500" />
         },
         {
-            title: "Restaurants Booking Table",
+            title: "Restaurant Reservation System",
             description: "A lightweight restaurant table booking system that sends booking details directly to a Telegram bot using Netlify Serverless Functions — no traditional backend required.",
-            tags: ["HTML", "CSS", "JavaScript","MongoDB","Telegram Bot"],
-            image: "https://placehold.co/600x400/1a365d/FFFFFF/webp?text=Restaurant+Website",
+            tags: ["HTML", "CSS", "JavaScript", "MongoDB", "Telegram Bot"],
+            image: "https://placehold.co/600x400/1a365d/FFFFFF/webp?text=Restaurant+Booking",
             github: "https://github.com/VIREN2779/restaurants-booking-table",
             demo: "https://v-29-restaurant.netlify.app/",
-            icon: <Laptop className="h-5 w-5 text-green-500" />
+            icon: <UtensilsCrossed className="h-5 w-5 text-green-500" />
         },
     ];
 
@@ -46,7 +46,7 @@ export default function Projects() {
                 <div>
                     <div className="flex flex-col items-center justify-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-3">My Projects</h2>
-                    <div className="w-24 h-1.5 bg-blue-600 rounded-full"></div>
+                        <div className="w-24 h-1.5 bg-blue-600 rounded-full"></div>
                         <p className="text-gray-600 mt-4 text-center max-w-2xl">
                             Showcasing my recent development work and creative solutions
                         </p>

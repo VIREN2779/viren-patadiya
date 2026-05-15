@@ -35,8 +35,11 @@ export default function Skills() {
         {
             title: "Frontend Development",
             icon: <Layers className="text-cyan-500 h-8 w-8" />,
-            color: "from-cyan-400/25 to-blue-500/10",
+            color: "from-cyan-400/20 to-blue-500/5",
             iconBg: "bg-cyan-500/10",
+            borderHover: "hover:border-cyan-400/50",
+            glowColor: "hover:shadow-cyan-100",
+            pillHover: "hover:bg-cyan-600 hover:border-cyan-600",
             skills: [
                 "HTML5", "CSS3", "Bootstrap", "Tailwind CSS",
                 "Material UI", "Ant Design",
@@ -49,8 +52,11 @@ export default function Skills() {
         {
             title: "Backend Development",
             icon: <Cpu className="text-violet-500 h-8 w-8" />,
-            color: "from-violet-500/25 to-indigo-400/10",
+            color: "from-violet-500/20 to-indigo-400/5",
             iconBg: "bg-violet-500/10",
+            borderHover: "hover:border-violet-400/50",
+            glowColor: "hover:shadow-violet-100",
+            pillHover: "hover:bg-violet-600 hover:border-violet-600",
             skills: [
                 "Node.js", "Express.js",
                 "RESTful APIs", "API Integration",
@@ -62,8 +68,11 @@ export default function Skills() {
         {
             title: "Database Management",
             icon: <DatabaseZap className="text-emerald-500 h-8 w-8" />,
-            color: "from-emerald-400/25 to-teal-500/10",
+            color: "from-emerald-400/20 to-teal-500/5",
             iconBg: "bg-emerald-500/10",
+            borderHover: "hover:border-emerald-400/50",
+            glowColor: "hover:shadow-emerald-100",
+            pillHover: "hover:bg-emerald-600 hover:border-emerald-600",
             skills: [
                 "MongoDB", "MySQL", "SQLite",
                 "Database Design",
@@ -73,8 +82,11 @@ export default function Skills() {
         {
             title: "Development Tools",
             icon: <Wrench className="text-amber-500 h-8 w-8" />,
-            color: "from-amber-400/25 to-orange-400/10",
+            color: "from-amber-400/20 to-orange-400/5",
             iconBg: "bg-amber-500/10",
+            borderHover: "hover:border-amber-400/50",
+            glowColor: "hover:shadow-amber-100",
+            pillHover: "hover:bg-amber-600 hover:border-amber-600",
             skills: [
                 "Git", "GitHub",
                 "VS Code",
@@ -87,8 +99,11 @@ export default function Skills() {
         {
             title: "Deployment & Cloud",
             icon: <Cloud className="text-sky-500 h-8 w-8" />,
-            color: "from-sky-400/25 to-blue-400/10",
+            color: "from-sky-400/20 to-blue-400/5",
             iconBg: "bg-sky-500/10",
+            borderHover: "hover:border-sky-400/50",
+            glowColor: "hover:shadow-sky-100",
+            pillHover: "hover:bg-sky-600 hover:border-sky-600",
             skills: [
                 "Cloudflare",
                 // "Vercel",
@@ -100,8 +115,11 @@ export default function Skills() {
         {
             title: "Professional Skills",
             icon: <Sparkles className="text-fuchsia-500 h-8 w-8" />,
-            color: "from-fuchsia-500/25 to-purple-400/10",
+            color: "from-fuchsia-500/20 to-purple-400/5",
             iconBg: "bg-fuchsia-500/10",
+            borderHover: "hover:border-fuchsia-400/50",
+            glowColor: "hover:shadow-fuchsia-100",
+            pillHover: "hover:bg-fuchsia-600 hover:border-fuchsia-600",
             skills: [
                 "Problem Solving",
                 "Team Collaboration",
@@ -115,7 +133,7 @@ export default function Skills() {
     const techLogos = [
         { name: "HTML5", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
         { name: "CSS3", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "Tailwind CSS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+        { name: "Tailwind", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
         { name: "JavaScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
         { name: "TypeScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
         { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -145,7 +163,7 @@ export default function Skills() {
                 <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="flex flex-col items-center justify-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-3">Skills & Expertise</h2>
-                        <div className="w-24 h-1.5 bg-blue-600 rounded-full"></div>
+                        <div className="w-24 h-1.5 bg-blue-600 rounded-full" />
                         <p className="text-gray-600 mt-4 text-center max-w-2xl">
                             My technical proficiency and professional capabilities that I bring to every project
                         </p>
@@ -158,11 +176,11 @@ export default function Skills() {
                                 className={`transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                 style={{ transitionDelay: `${index * 100}ms` }}
                             >
-                                <Card className="py-0 pb-5 overflow-hidden h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                                    <div className={`bg-gradient-to-br ${category.color} h-3`}></div>
+                                <Card className={`py-0 pb-5 overflow-hidden h-full shadow-lg transition-all duration-300 border border-transparent ${category.borderHover} hover:-translate-y-1.5 hover:shadow-xl ${category.glowColor}`}>
+                                    <div className={`bg-gradient-to-r ${category.color} h-1.5`} />
                                     <CardHeader className="">
                                         <div className="flex items-center space-x-4">
-                                            <div className={`p-3 rounded-xl ${category.iconBg}`}>
+                                            <div className={`p-3 rounded-2xl ${category.iconBg}`}>
                                                 {category.icon}
                                             </div>
                                             <h3 className="text-xl font-bold text-navy-dark">{category.title}</h3>
@@ -171,8 +189,12 @@ export default function Skills() {
                                     <CardContent className="pt-2">
                                         <ul className="flex flex-wrap gap-2">
                                             {category.skills.map((skill, skillIndex) => (
-                                                <li key={skillIndex} className="flex items-center">
-                                                    <span className="text-gray-700 text-md font-medium px-3 py-1 rounded-full border transition-transform hover:bg-black hover:text-white hover:scale-105">{skill}</span>
+                                                <li key={skillIndex}>
+                                                    <span
+                                                        className={`text-gray-600 text-sm font-medium px-3 py-1 rounded-full bg-gray-50 border border-gray-200 transition-all duration-200 hover:text-white hover:scale-105 inline-block cursor-default ${category.pillHover}`}
+                                                    >
+                                                        {skill}
+                                                    </span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -196,7 +218,7 @@ export default function Skills() {
                                             loading="lazy"
                                             decoding="async"
                                         />
-                                        <p className="mt-2 text-sm text-gray-700">{tech.name}</p>
+                                        <p className="mt-2 text-sm text-gray-500">{tech.name}</p>
                                     </div>
                                 ))}
                             </div>
@@ -212,7 +234,7 @@ export default function Skills() {
                                             loading="lazy"
                                             decoding="async"
                                         />
-                                        <p className="mt-1.5 text-xs text-gray-700">{tech.name}</p>
+                                        <p className="mt-1.5 text-xs text-gray-500">{tech.name}</p>
                                     </div>
                                 ))}
                             </div>

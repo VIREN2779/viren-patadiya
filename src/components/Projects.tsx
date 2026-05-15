@@ -10,8 +10,8 @@ export default function Projects() {
             title: "E-Commerce Website",
             description: "Built a full-stack MERN e-commerce platform with user authentication, product show page and a complete checkout flow including Pay on Delivery. Developed an admin dashboard for efficient product management, order handling and real-time delivery status tracking. Deployed the frontend on Netlify and backend on Render ensuring scalable performance and seamless user experience.",
             tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-            image: "https://placehold.co/600x400/1a365d/FFFFFF/webp?text=E-Commerce",
-            demo: "https://dev-viren-e-commerce.netlify.app/",
+            image: "https://placehold.co/600x400/1a365d/FFFFFF/webp?text=E+Commerce",
+            demo: "https://viren-ecom.netlify.app/",
             icon: <ShoppingCart className="h-5 w-5 text-blue-500" />
         },
         {

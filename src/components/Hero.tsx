@@ -1,5 +1,4 @@
 import { ArrowDown, Mail } from 'lucide-react';
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -82,15 +81,13 @@ export default function Hero() {
                             }`}
                     >
                         <div className="relative mb-6">
-                            <Avatar className="h-37 w-37 border-4 border-primary/80 shadow-2xl">
-                                <AvatarImage
+                            <div className="h-37 w-37 rounded-full border-4 border-blue-500 shadow-2xl overflow-hidden">
+                                <img
                                     src="/profile-pic.jpg"
                                     alt="Viren Patadiya"
+                                    className="w-full h-full object-cover object-top scale-125"
                                 />
-                                <AvatarFallback className="bg-primary text-white text-2xl font-bold">
-                                    VP
-                                </AvatarFallback>
-                            </Avatar>
+                            </div>
                         </div>
 
                         <h1 className="text-white text-4xl md:text-6xl font-bold mb-3">

@@ -1,7 +1,5 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Home, User, Code, FolderOpen, Mail } from 'lucide-react';
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
@@ -52,17 +50,22 @@ export default function Navbar() {
         <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-blue-500/20 shadow-2xl">
             <div className="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between">
                 {/* Logo */}
-                <div className="flex items-center gap-3">
-                    <Avatar className="h-11 w-11 border-2 border-blue-500 shadow-md">
-                        <AvatarImage src="/profile-pic.jpg" alt="VIREN PATADIYA" />
-                        <AvatarFallback className="bg-blue-600 text-white font-bold">VP</AvatarFallback>
-                    </Avatar>
+                <div
+                    className="flex items-center gap-3 cursor-pointer"
+                    onClick={() => scrollToSection('hero')}
+                >
+                    <div className="h-11 w-11 rounded-full border-2 border-blue-500 shadow-md overflow-hidden">
+                        <img
+                            src="/profile-pic.jpg"
+                            alt="Viren Patadiya"
+                            className="w-full h-full object-cover object-top scale-125 cursor-pointer"
+                        />
+                    </div>
 
                     <button
-                        onClick={() => scrollToSection('hero')}
-                        className="text-2xl font-bold text-white"
+                        className="text-2xl font-bold text-white cursor-pointer"
                     >
-                        VIREN <span className="text-blue-500">PATADIYA</span>
+                        VIREN <span className="text-blue-500 cursor-pointer">PATADIYA</span>
                     </button>
                 </div>
 
@@ -73,8 +76,8 @@ export default function Navbar() {
                             key={id}
                             onClick={() => scrollToSection(id)}
                             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${activeSection === id
-                                    ? "bg-blue-600 text-white shadow-md"
-                                    : "text-white/90 hover:bg-white/10 hover:text-white"
+                                ? "bg-blue-600 text-white shadow-md"
+                                : "text-white/90 hover:bg-white/10 hover:text-white"
                                 }`}
                         >
                             <Icon size={18} className="text-white" />
@@ -101,8 +104,8 @@ export default function Navbar() {
             {/* Mobile Navigation */}
             <div
                 className={`md:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen
-                        ? "max-h-125 opacity-100"
-                        : "max-h-0 opacity-0"
+                    ? "max-h-125 opacity-100"
+                    : "max-h-0 opacity-0"
                     }`}
             >
                 <div className="px-6 pb-5 pt-2 bg-slate-900/95 border-t border-white/10">
@@ -112,8 +115,8 @@ export default function Navbar() {
                                 key={id}
                                 onClick={() => scrollToSection(id)}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${activeSection === id
-                                        ? "bg-blue-600 text-white"
-                                        : "text-white/80 hover:bg-white/10"
+                                    ? "bg-blue-600 text-white"
+                                    : "text-white/80 hover:bg-white/10"
                                     }`}
                             >
                                 <Icon size={18} className="text-white" />

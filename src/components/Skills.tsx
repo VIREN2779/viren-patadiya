@@ -74,7 +74,7 @@ export default function Skills() {
             glowColor: "hover:shadow-emerald-100",
             pillHover: "hover:bg-emerald-600 hover:border-emerald-600",
             skills: [
-                "MongoDB", "MySQL", "SQLite",
+                "MongoDB", "MySQL", "SQLite","PostgreSQL",
                 "Database Design",
                 "Data Modeling"
             ]

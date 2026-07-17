@@ -117,7 +117,7 @@ export default function Hero() {
                             <a href="https://www.linkedin.com/in/viren-patadiya-5029561a0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-blue-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
                                 <FaLinkedinIn size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
                             </a>
-                            <a href="mailto:virenpatadiya2779@gmail.com" aria-label="Email" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-green-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
+                            <a href="mailto:virenpatadiya073@gmail.com" aria-label="Email" className="group p-2.5 sm:p-3 rounded-full bg-white/10 hover:bg-green-500 transition-all duration-300 shadow-lg text-white touch-manipulation">
                                 <Mail size={18} className="sm:w-[22px] sm:h-[22px] group-hover:scale-110 transition-transform" />
                             </a>
                         </div>

@@ -13,7 +13,7 @@ export default function Footer() {
     const quickLinks = ['hero', 'about', 'skills', 'projects', 'contact'];
 
     const contactItems = [
-        { icon: Mail, url: 'mailto:virenpatadiya2779@gmail.com', label: 'virenpatadiya2779@gmail.com' },
+        { icon: Mail, url: 'mailto:virenpatadiya073@gmail.com', label: 'virenpatadiya073@gmail.com' },
         { icon: FaGithub, url: 'https://github.com/VIREN2779/', label: 'GitHub'},
         { icon: FaLinkedinIn, url: 'https://www.linkedin.com/in/viren-patadiya-5029561a0/', label: 'LinkedIn'},
     ];

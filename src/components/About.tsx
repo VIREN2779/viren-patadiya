@@ -64,7 +64,7 @@ export default function About() {
                                         I'm{" "}
                                         <span className="font-bold">Viren Patadiya</span>, a{" "}
                                         <span className="font-bold">Software Developer</span>{" "}
-                                        with 2.5+ years of experience crafting clean, user-friendly web applications — from pixel-perfect frontends to robust backends.
+                                        with 3 years of experience crafting clean, user-friendly web applications — from pixel-perfect frontends to robust backends.
                                     </p>
 
                                     <p className="text-gray-700 leading-relaxed mt-4">

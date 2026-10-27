@@ -26,7 +26,7 @@ export default function Footer() {
                     <div className="flex flex-col">
                         <h2 className="text-3xl font-bold">VIREN <span className="text-blue-400">PATADIYA</span></h2>
                         <p className="text-slate-400 my-3">
-                            Full Stack Developer with 2.5+ years of experience building
+                            Full Stack Developer with 3 years of experience building
                             clean, scalable web apps. Crafting responsive frontends with
                             React.js & Next.js and robust backends with Node.js & Express —
                             always writing clean, testable code.
